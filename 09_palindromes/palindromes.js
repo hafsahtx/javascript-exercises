@@ -1,7 +1,12 @@
 const palindromes = function (x) {
-    word = x.replace(/[.,!]/g,"").toLowerCase()
-    word = word.replace(/\s/g, '');
-    let reverseWord = word.split("").reverse().join("");
+    const alphanumerical = "abcdefghijklmnopqrstuvwxyz1234567890";
+    const word = x
+                    .toLowerCase()
+                    .split("")
+                    .filter(letter=>alphanumerical.includes(letter))
+                    .join("");
+
+    const reverseWord = word.split("").reverse().join("");
     return reverseWord==word;
 
 };
